@@ -1,0 +1,71 @@
+---
+id: get-a-webhook
+title: "Get a webhook"
+description: "This route allows you to fetch a specific webhook in your Port organization. You can also see it in the [data sources page](https://app.getport.io/settings/data-sources) of your Port account.<br/><br/>To learn more about webhooks, check out the [documentation](https://docs.port.io/build-your-software-catalog/custom-integration/webhook/)."
+sidebar_label: "Get a webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVEtr20AQ/ivLnhKwpaRHUQqBlFB6CWlKKcGH1WokLZZ3ld1Zu67Qf++MHrZj3B4KvfUi72Nm9nvMuJMFBO1Ni8ZZmcnn2gThXUQQqmncLoi9iwKdKAF1LZQILWhTGi12kNfOrYWxHOLFo/MonK+UNT8VV0vEd0rVylKl4EQAEAY5HGsQL4VCKkaJGoJoVQWrqxqxDVmaqrZNKsCWCibGpQEQja1CyinLKeVauPLkXaW1ixaT97lPPwyfZycaUN6KjfPEJSdKM+SwELoGvRZ8NoJxOm7A4oD7CISOQzLDyKNpiiU/SRhK3CkPS02IGlelOgZ0m6WxCJUfiqTTW+l1IhcSVRVk9iK/jYdytZCt8moDCJ4vOhkI0UbJrJO4b4GMCOiJtOwX0rAvrcKaClnKoZ0pCCy5AJ7Ozg0kmQ/XrBIznM1iM3fK4sHRUTGq4uE1Gg+FzNBH6AlhAB29wf2ALyct6TXi4EEV2QnTIFcc7SG0tIHAHN7d3PDPW2T3UKrYoHiaImVP5EiC2tGjkgyXi5FmJtPt7SxgSLsjnV4yLL+dVYu+oehj35jZLdLt0m0Mx4AThl9Y/BH5zPPgA6V9hv1R+rtIgP3U4nJypyZNKKsf3CrdkG6w4fihPe8eP1Eowx6luE1u2NnWBdwoy+FT9QegXp7dOve2k9qR7hb/z+m/mtPRc4QfmLaNIm/JpaGNuqk1X+T2lgJnhLTMToaReqomTzms63IV4Ktv+p6PXyN4niRabpU3KufmoA4uTOA1TUBJ6sMfHL96mib0WvztjF+kN/e55SbfqibyjpZr6vo3/zT96nReHz4+U5CKLMrpsKyHYZkWzPBi/fMpGh/jLw/uxZSuG0ex7w/x49VvM6apPFCxTKHvfwFl1W2B
+sidebar_class_name: "get api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/webhooks/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to fetch a specific webhook in your Port organization. You can also see it in the [data sources page](https://app.getport.io/settings/data-sources) of your Port account.<br/><br/>To learn more about webhooks, check out the [documentation](https://docs.port.io/build-your-software-catalog/custom-integration/webhook/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"identifier","description":"The identifier of the webhook you want to fetch.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

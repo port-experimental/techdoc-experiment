@@ -1,0 +1,71 @@
+---
+id: create-an-access-token
+title: "Create an access token"
+description: "This route allows you to create an access token for your Port account. You can use this token to authenticate your requests to the Port API.<br/><br/>To obtain your client ID and client secret, go to your [Port application](https://app.getport.io), click on the `...` button in the top right corner, then click `Credentials`."
+sidebar_label: "Create an access token"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVU1v4zYQ/SvEnFqAlZI9CkWB7G4PQQ8NGvewMISGlsYWNzKHSw6zcQ3992JIJVac3QVa7LE+yPJwOB9v3hsfocfYBevZkoMGVoONKlBiVGYc6XNUB0qKSXUBjRidMl2HMSqme3RqS0E8grqhwHJEyXGlPlBSnXEqRVQsIYs3kzKJB3RsO4mWbwb8lDCy+CgesES6urmuft6E+pf8WJGiDRvryo1utOhYXb9XxvVPvyJ2AVmrHUmg7LcuRXk/SjpLrv1hYPaxqWvjfbVD9hS4svSjlijdvSKXS7irqupObRIzOWWLjcmrYHcDq46Cw6DF6uZ7d+8C9tKWGeNdBRrY7CI0a7g6tWvJqVqJgYL9O/+GVsPc/lvqD9AcoSPH6FheF4XXH6OM5wixG3Bv5I0PHqEB2nzEjkGDD+QxsMWYw2RQrvuFZ+Rg3Q702cQ/PE/vGVaY9BzgNoP6H4KUacA0aTB9b8XNjDeLErdmjFi6twF7weq55rPs7SRhTp4cEmZD9ORi6ffNxYV8vazqCWvsVUyZtds0jgeJ/31Qpnt5okt7aNZSViv95kwrIfxr4CYN+OhtwHi9PHVpv8HwCtbVgKocKdoKpuT6qJJjO2ZOvpDiHFdSZMMqh35VwL+ZyLKVZeHLDO150V9DfZryHPfIA/XQgKeYETU8QAP1w2Utu6EuOf/iOWnE8IBBtHSEFEZo4CRhW836hUl/6TTFk0MroboULB9uZbplgBs0AcMCJePtbygMcWaPi2aKXDVY6XBA02PIUApj/jgp+NdHs/cjvlTgSTQvRbXghHVbylVYltvwtANBg3RfgL2sLsRXcNubzJ65yHdf3M3nbFrslv/X/Pda84U1jI9c+9FYJwPKRDzOxF7DwyVoEDzgaTfM5G41DKKBZg3H48ZE/DOM0yTmTwnDAZp1q+HBBGs2Qoq1LJeZeqKGezzI7MtMf8paFPcxFR6fbTVRSLlx1XXo+Zu+7UKmN7/frkDDZv5/2lMvd4L5DDo/GwANlDmWJZVtRxiN2yWzE98SUz7/AH249dE=
+sidebar_class_name: "post api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create an access token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/auth/access_token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to create an access token for your Port account. You can use this token to authenticate your requests to the Port API.<br/><br/>To obtain your client ID and client secret, go to your [Port application](https://app.getport.io), click on the `...` button in the top right corner, then click `Credentials`.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"clientId":{"type":"string","description":"Your Port client ID"},"clientSecret":{"type":"string","description":"Your Port client secret"}},"additionalProperties":false,"required":["clientId","clientSecret"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Authorized successfully","content":{"application/json":{"schema":{"type":"object","properties":{"ok":{"enum":[true]},"accessToken":{"type":"string"},"expiresIn":{"type":"number","description":"The number of seconds until the access token expires"},"tokenType":{"type":"string"}},"additionalProperties":false,"required":["accessToken","expiresIn","tokenType"],"description":"Authorized successfully"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: get-a-blueprints-entity-count
+title: "Get a blueprint's entity count"
+description: "This route allows you to count the number of entities in a specific blueprint in your software catalog.<br/><br/>To learn more about entities, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/#entities)."
+sidebar_label: "Get a blueprint's entity count"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVUuP2zYQ/ivE9NAEoK3dRXoRDAMLZBEEKdCg2Z52jQ0lji1iJVIhh3ZdQf+9GD2dXbunAu0hF5keDuf5fTMNaAy5NzUZZyGF+8IE4V0kFKos3SGIo4uCnMhdtCSoQGFjlaEXbivQkiGDQRgrlAg15mZrcpGVEWtvLLH86KIXwW3poDyKXJEq3W65ynyy7j73TpSovBWV8yhU5iJNdqXIC8yfBcvY84N2eazQkuJoN28KojqkSaJdHpa187Q0LsmiKfWC3S5Gt4vBbRKONl9oRWpBbhL+NLp7uwQJpHYB0ge4G4SwkVArryok9HzTQMgLrBSkDdCxRkghkDd2BxIqY39Fu6MC0utWguGK1ooKkGBVxapTbZ6MZr9bgx4kePwWjUcNKfmI8lVTUMzqXHmuxlzmQ+ECzt3gjh0Ud2toW19uaDcSAubRGzp2iWSoPHpIHzZ85THUzgYMnNnN1RX/fB/Hl5jnGAK0Et5dvXt9/5vFMbitY/QYuxPovfNBuDyP3qNOH+2jXZHKSlzzwa8frRArKtZ3rLhKqJgk72frg3yVdA/mZ3q9ytbW0dPWRatXSbZeJaSny9vTKhkquthq7/ZGoxZf56J+FQcVhHUkBkOdkdFdMsbbpX5z8/9J3di9Ko1+YgBhoFcFuD/Nl5EvtMM+0UpR3hek53sP63/K/JdzoPjvMif0VpVP2Jt42XkrRo0+mimYyxm2EiqkwmlIYYcEsidvCsn+OpmAFJLmHIvbZCTgoiMdMNn8fhwa0ZeQwjixVG3GgQWtPHcbw6xwwtsv3KSeoiN7pzGkavMJj/OsuY1UOG/+6qYlDOOoQKXRd7kau3Xdc0Ml6392nsTt548ggcPu23u9vOLW1y5QpSyrD9Y/IAk10+vn0A+goxiz/w4mDeTOElr6sWPk2C/CPympS2U6cnUQaAbEPcD+GuS8LQJISC/sjhew20goXCC20TSZCviHL9uWxd8ieh78Gwl75Q3DvoOmNoHPGtKtKsPL7XPauTe/D3vqrfiXdtKFYoyItgznvSoj/wMJz3i8tETbzSl9P9zdgwQVuZinBHnuCDIcOPmznl4yp3fLXybr2SdN09OvbSf9/urii4GJozYnvmnb9m8DEVph
+sidebar_class_name: "get api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a blueprint's entity count"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/blueprints/{blueprint_identifier}/entities-count"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to count the number of entities in a specific blueprint in your software catalog.<br/><br/>To learn more about entities, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/#entities).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","minLength":1},"in":"path","name":"blueprint_identifier","required":true,"description":"The identifier of the blueprint whose entities you want to count.<br/>"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Success"},"404":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>not_found</b></td>\n  <td>A blueprint with the provided `identifier` was not found</td>\n</tr>\n</table>\n"},"422":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>invalid_request</b></td>\n  <td>The provided data does not match the route schema</td>\n</tr>\n</table>\n"},"500":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>internal_error</b></td>\n  <td>An internal error occurred</td>\n</tr>\n</table>\n"}}}
+>
+  
+</StatusCodes>
+
+
+      

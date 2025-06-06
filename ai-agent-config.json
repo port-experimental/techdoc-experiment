@@ -1,0 +1,53 @@
+{
+  "agentConfig": {
+    "name": "Documentation Assistant",
+    "description": "AI agent to help you find and understand documentation",
+    "purpose": "Answer questions about documentation content, find relevant docs, and provide detailed explanations",
+    "dataAccess": {
+      "blueprints": ["documentation"],
+      "entities": ["*"],
+      "properties": ["content", "summary", "category", "tags", "searchableContent"],
+      "relations": ["parentDoc", "relatedDocs"]
+    },
+    "actions": {
+      "enabled": true,
+      "permissions": "approval_required",
+      "availableActions": [
+        "search_documentation",
+        "create_bookmark",
+        "suggest_related_docs"
+      ]
+    },
+    "prompt": {
+      "systemPrompt": "You are a helpful documentation assistant with access to a comprehensive knowledge base of markdown documentation. Your role is to:\n\n1. Answer questions about documentation content accurately and thoroughly\n2. Help users find relevant documentation based on their queries\n3. Explain complex concepts in simple terms\n4. Suggest related documentation that might be helpful\n5. Provide code examples and implementation guidance when available\n\nWhen responding:\n- Always cite the specific documentation source\n- Provide direct quotes when helpful\n- Suggest follow-up questions or related topics\n- Be concise but comprehensive\n- If you're unsure, clearly state limitations\n\nYou have access to documentation entities with properties like content, summary, category, and tags. Use this information to provide the most relevant and helpful responses.",
+      "conversationStarters": [
+        "What documentation do you have about API authentication?",
+        "Show me guides for getting started",
+        "Find examples of blueprint configuration",
+        "What are the best practices for entity management?",
+        "Help me understand scorecard implementation",
+        "Search for integration tutorials"
+      ]
+    },
+    "settings": {
+      "maxTokensPerResponse": 2000,
+      "temperature": 0.7,
+      "includeReferences": true,
+      "enableSuggestions": true
+    }
+  },
+  "deployment": {
+    "channels": ["slack", "web"],
+    "permissions": {
+      "allowedUsers": ["*"],
+      "allowedTeams": ["*"],
+      "restrictToOrg": true
+    },
+    "features": {
+      "contextualSearch": true,
+      "autoSuggestRelated": true,
+      "bookmarking": true,
+      "feedbackCollection": true
+    }
+  }
+} 

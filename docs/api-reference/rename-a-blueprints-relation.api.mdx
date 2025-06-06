@@ -1,0 +1,71 @@
+---
+id: rename-a-blueprints-relation
+title: "Rename a blueprint's relation"
+description: "This route allows you to change the identifier of a relation in a specific blueprint in your Port account.<br/><br/>To learn more about blueprints, check out the [documentation](https://docs.port.io/build-your-software-catalog/customize-integrations/configure-data-model/setup-blueprint/)."
+sidebar_label: "Rename a blueprint's relation"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVVFv2zYQ/ivEYcBaTLKSvU3YhqXdgBV7CbLsZY5XnKWzxUYiWfJo1xH034eTZMlJ3KLd9rgXWSZ5vO++77tTCyWFwmvH2hrI4bbSQXkbmRTWtd0HdbBRsVVFhWZLiitSuiTDeqPJK7tRqDzVKOFKG4UqOCr0RhdqXUdyXhuW9YONXl1bzwqLwkbDi+/XPvuxf9xaVRN6oxrrSeHaRp6DQ6KKiop7JauSfVnaIjZkuM+5elExu5BnWWmLsHDW80LbbB11XaaSNA12w3v0lBbIWNttVsTAttEPlGrDtPX9PSErrNnobfSUlsiYNrakOgvE0aUTmOzlAhJg3AbIl/BqwgirBDy9jxT4lS0PkLdQWMNkWF7RuVoXfZrsXRCaWwhFRQ3KGx8cQQ52/Y4KhgSct448awqya2h/M9L7ZqL9JCyw12YLyTMZSRnaP5FK6DuKNfAv+ZCZvAT9tbxK/8T04SL97qe3P9zd3d2lq2++gq5LAMtSSxTW1yfwNlgH6jo54NBjQ0xemDlT3oizS0BLKodcQQIGG9mcUZ4t5HkRs7XEnXs0PFt0KkwE0Z5KyNlH6pIvRXVk6u0Xw5sa4hSdJ7n3Y+hWCQQqotd86AlcE3oRernqem8FZ00YLPHtxYX8PAbyM20w1qxuxpO9ag1xZcuhsKIatK4gh2x3mc0NlrVzBV12xB6y9gwBst/TI3D97ih39DXkcOxEdPrYiCC0P9+NYT5wUvnvos9Q5LH+SSp0+jc6zOpcRa6s1w89QhgFrAhL8n3t0mg3c0v+8gEbV9MnWuqRGTa2T61ZQqCfW1fXbyABKXlg/HJxIWedDdxg39MjspueIYWzS78OkyWeOuhkUPw/ez9n9g5uYPrAmatRG9GgN1g7unsJu0tIYC4CEsgftfBkcdk53+Wjy1cJVDawXNq2awz0h6+7TpbfR/LSqasEdug1rsUoyxZKHeS9HIfjJ9R+cTNOgJfqXwy5s3wcW8ZIv+ywjvIPErinw+NpK935HyL+nLn3DwCfk6hbdcmx3YX34eTrAWt6K/fNNz37AMvQmYbj9dXt61/FMeOXW9wnWXEvRsD9AMW6wTJ5O6y1UKPZRtzK2eHS/kMZxYOnU+u+n1rji0A9W+zTcTbUI0/R6GxI2w4zseum88PWRyNGviYjCBFd1/0NvuaD0Q==
+sidebar_class_name: "patch api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Rename a blueprint's relation"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/v1/blueprints/{identifier}/relations/{relation_identifier}/rename"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to change the identifier of a relation in a specific blueprint in your Port account.<br/><br/>To learn more about blueprints, check out the [documentation](https://docs.port.io/build-your-software-catalog/customize-integrations/configure-data-model/setup-blueprint/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"identifier","description":"The identifier of the blueprint you want to change.<br/>","required":true},{"schema":{"type":"string"},"in":"path","name":"relation_identifier","description":"The identifier of the relation you want to rename.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"newRelationIdentifier":{"type":"string","description":"The new identifier of the relation.<br/>","pattern":"^[A-Za-z0-9@_=\\\\-]+$"}},"additionalProperties":false}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

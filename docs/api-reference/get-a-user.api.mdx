@@ -1,0 +1,71 @@
+---
+id: get-a-user
+title: "Get a user"
+description: "This route allows you to fetch a specific user in your Port organization.<br/><br/>To learn more about users, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/)."
+sidebar_label: "Get a user"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVVFv2zgM/isCnzbAjdt7NA4H9GEYhgFDseueguDASEysxbY8ikqXGf7vB8pJk7a+Yb17uhfZFkn540fy0wCOomXfiw8dVHBf+2g4JCGDTRMeojmEZCSYDYmtDZrYk/Ubb02KxMZ3amdzF1hM4C12/gfqUYvf11z+kZf7YBpC7kwbmAyuQ5IcHAtja7I7oxtSk1m6YFNLneQTVm9qkT5WZemCjYs+sCx8KGMMV7xGW+pyFfbEe08P5dsFFCC4jVAt4YueDqsCemRsSfSrWg4QbU0tQjWAHHqCCqKw77YwFuA1+R6lhgI6bNWoGP+iFn0DxQuWyGSLQeeYYjRhk1PIpChjD9jJI20TGVAA07fkmRxUwonGVQGRbGIvh4xvTcjEmgETuipNaagbU+xDFykq+N+ur/XxFNJnEva0J2dispZi3KSmOSgrNnRCnWgI9n3jbaa3/Bo17pKUXz2w59ATi5/QhN0FodgdoADqUgvVUnNcjUUmUn2exk3MztVi4znKp1yEGWuDPzH23krieVsUlBTnq+9mt6eNud9w2HuX2+qcOjNq8l6onfvLWIBlQiF3Ky/NBWwCtyhQgUOhK/Et6Z9S714bEnj7K7jC+itZeVHOWSrGy9Zdqs9K94SwfSUFHBr6D+i6+cI/w5e9zgg/OOrEb/wr6zU+PzbsVFPQOa8jgs3dBbQNNpGOMS1JHRxUsKWcgapKBeX+pswTXQ5nZRlBJYD3J4VK3EAFJ+HD3p90D8Zizpri2eFCTf7UmZ4YO2nKOe/ef6TDWeZuk9SBj7INRyWsCR1xJtZ3m5DDvTTqn6X+9u4DFKCwJ7G4WVznuQhRWuzOlYL3JAazLD4X0eEsTP/zW2fiVei7lH2Dvstzy1nbptovYX8Dkw5GKKC6uFlWBdQhivoMwxojfeFmHHX7WyLWa2FVwB7Z41rZXw7gfNR3d+y5n7D65vOxed+af3thzeb2ROv32CT9ggJ2dHh6bY6q/sdWUuiTw6211MtF6ItbSVv5cYjev7uHAjApkZdNvMtNfHzR02dhPe/uCYKuOlCzIcMwjcg4PvpPpn+MOKZ48laWVuM4/g0/ETn8
+sidebar_class_name: "get api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/users/{user_email}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to fetch a specific user in your Port organization.<br/><br/>To learn more about users, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"user_email","description":"The email address of the user you want to fetch.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Retrieved successfully.","content":{"application/json":{"schema":{"description":"Retrieved successfully.","properties":{"ok":{"type":"any","enum":[true]},"user":{"properties":{"email":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"picture":{"type":"string"},"status":{"type":"string"},"id":{"type":"string"},"type":{"type":"string"},"providers":{"type":"array","items":{"type":"string"}},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"orgs":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}},"teams":{"type":"array","items":{"type":"string"}},"roles":{"type":"array","items":{"type":"object","properties":{"name":{"type":"string"}},"required":["name"]}},"teamsIdentifiers":{"type":"array","items":{"type":"string"}}}}},"required":["ok"],"additionalProperties":false}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

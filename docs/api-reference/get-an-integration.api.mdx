@@ -1,0 +1,71 @@
+---
+id: get-an-integration
+title: "Get an integration"
+description: "This route allows you to fetch a specific integration in your Port organization.<br/><br/>To learn more about integrations, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/)."
+sidebar_label: "Get an integration"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVE2L2zAQ/StiTi048W6PphQK/SD0UtotPSyBnVhjW6wiudIoW9f4v5exnax3Ny2UXgq9OEHzpJn33sz0oCmWwbRsvIMCrhoTVfCJSaG1/i6qzifFXlXEZaNQxZZKU5lSGcdUB5R7yjiBBfXRB1Y+1OjMjzGyfrkL+avxc+WVJQxO7X0ghTufePlGzFTZUHmr5JwbUtfal2lPjsfw9lnD3MYiz7Uv47r1gdfG57tkrF5J7lX0Fd9hoFWJjNbXeexcudLIuGJ/Ony+hgwY6wjFNWwW6WGbQYsB98QUJNpDLBvaIxQ9cNcSFBA5GFdDBpoqTJahAOMio7XjGxsNGZBLe3n7ScD6euNqirzRsB0yMCL3t0Shgwwc7iXBrntnyOoxw0NXSFUSUSmSFjuMJsem6kapFjKu1deGnIrEgrpZJL3JRuzNfNNQuFEnwio2PlmtdqTKBl1NWmFZ+qCNq203uQgZBPqWTCANRYU20pD9WqQjwxa5uSd4n/wsx6Voymjlq8f8xna8Q8ennjxTHIdEwzaDSGUKhrvRzR1hoCDWBEJdmAfeCzpQbL2LFIXMi4sL+XlY4pvJdvVpRsIwZLAnbryGAmpiyCa+BeSHy3yRIu/vmQ8glYXDsc1SsFDAsb2xNcfuBtH3aTTFe8CC5GcxYir+SPXkCbbmAy367HXixod5RmF2qiHUFEZOxlV+vG7YCn6c69cfN5CBlD2pcbm+EJdbH3mPTuDz6++JFbqla4/N7qH0jsnxf7NxJh+YvnPeWjROlBut7eeOuYbD5ejEUrRiMS/bDBofWZB9v8NIX4IdBjmeloi0kjYRd/Y0n79V/d/YKGeFuaXuwTI8oE2CGvv9gMEIyT8k/OzTvB6eq7/eNGeLPo6a65YVH8ksjBy2y63x/u0VZIBJemA5r7fjvM5/hOrZ9x8P8pRMvrI7zl7p+2kbDMMJP4V+eWNeDCcqTigMw0+LbeBX
+sidebar_class_name: "get api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get an integration"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/integration/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to fetch a specific integration in your Port organization.<br/><br/>To learn more about integrations, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","default":"installationId","enum":["installationId","logIngestId"]},"in":"query","name":"byField","description":"The field used to identify the integration. When set to `logIngestId`, the `identifier` parameter should be changed accordingly.<br/>","required":false},{"schema":{"type":"string"},"in":"path","name":"identifier","description":"The installation id of the integration you want to fetch.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

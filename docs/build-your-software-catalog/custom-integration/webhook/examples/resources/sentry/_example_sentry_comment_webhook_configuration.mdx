@@ -1,0 +1,21 @@
+```json showLineNumbers
+[
+  {
+    "blueprint": "sentryComment",
+    "entity": {
+      "identifier": ".body.data.comment_id",
+      "title": "Comment Event",
+      "properties": {
+        "action": ".body.action",
+        "comment": ".body.data.comment",
+        "project": ".body.data.project_slug",
+        "issue_id": ".body.data.issue_id",
+        "timestamp": ".body.data.timestamp"
+      },
+      "relations": {
+        "sentryIssue": ".body.data.issue_id | tostring"
+      }
+    }
+  }
+]
+```

@@ -1,0 +1,71 @@
+---
+id: delete-a-webhook
+title: "Delete a webhook"
+description: "This route allows you to delete a webhook in your Port organization. You can also delete it via the [data sources page](https://app.getport.io/settings/data-sources) of your Port account.<br/><br/>To learn more about webhooks, check out the [documentation](https://docs.port.io/build-your-software-catalog/custom-integration/webhook/)."
+sidebar_label: "Delete a webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVE1v2zAM/SsCTy2gxO2OxjBgQHsYtkPRdRiGIAfGZmwhtuRKVLLM8H8f6I847bIdBuy2i+OIpPgeH59byClk3jRsnIUUnkoTlHeRSWFVuUNQRxcVO5VTRXKoDrQpndspYyXk1YPzrJwv0JofKLcs1TcXVYZWYRVOhYbV3qDiktQqR0YVXPQZBdVgQeurkrkJaZJg0ywL4sZ5XhqXBGI2tgiJlCzGkmvltme9MctctLx8u/HJu/7x5FRF6K2qnSeFGxd5gh20ykrKdkrOBjAuizVZ7rHPQHKXheUEYxNNlS+k5SK4LR/Q0yJDxsoVSRYDu3phLFPh+0uSsVdyvQQNjEWAdAVfh0NYa2jQY01MXgIthKykGiFtgY8NQQqBvbEFdBqMaNIgl6DBYi1Bk5NlszXkQf8iHqk5LFMShpNgIuQBLc9qDiMDDZ6eo/GUQ8o+UrfWECiL3vCxB7gh9OSFxFCXnpENsJZ8T6FxNlAQGm9ubuTnJbg72mKsWD2OmdB1Gmri0uWQjheDHsimkOxvpzGGpJ1JdSDY/H6aXfQVpDBvj5k0g05fisYwJ5zR/CwSDOAnsic1sDEf6TgL8D5y6fy47DBqVBLm5HtOxm5dX264kvx+Sd8/fAANAnuYxu3yRvRtXOAaraSPt9+98tlrkVvInGWy/N+s/8Ksg+RM3zlpKjRWROq3qB03cwX7W9AwIQQN6Zkj1xpKF1jS2naDgb74quvk+DmSFzetNezRG9zIbqxayE2Q9xzSLVaB/qD21ePo0mv110a/yG/acytLvscqyj/QsKPjy+9Ntz637N39p/une9CAUQZz7pdd75fxRVhebPHaSEM/eYp3L5a07eDGrjvlD6HfVozGPLGxwqLrfgIDWW+n
+sidebar_class_name: "delete api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/webhooks/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to delete a webhook in your Port organization. You can also delete it via the [data sources page](https://app.getport.io/settings/data-sources) of your Port account.<br/><br/>To learn more about webhooks, check out the [documentation](https://docs.port.io/build-your-software-catalog/custom-integration/webhook/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"identifier","description":"The identifier of the webhook you want to delete.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

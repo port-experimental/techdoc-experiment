@@ -1,0 +1,71 @@
+---
+id: delete-an-integration
+title: "Delete an integration"
+description: "This route allows you to delete an integration in your Port organization.<br/><br/>To learn more about integrations, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/)."
+sidebar_label: "Delete an integration"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVM1u2zAMfhWBpxZQ4nZHYxhQoD0U26HoulOQA2MzsVBHcikqXWb43QfaTuK22S677eI4Iiny+6FbKCkW7BpxwUMOT5WLhkMSMljX4TWafUhGgimpJj30xnmhDaMWGOc1zuYhsJjAG/TuVx+Zf15x9qV/PAVTE7I328BkcBWSTO+I1hQVFc9Gz6UisyhDkbbkpQ8vLyqRJuZZVoYizpvAMnchWyVXlzPtPYthLa/INCtQsA6bLO59MStRcCbheHg5BwuCmwj5Au4n7WFpoUHGLQmxRluIRUVbhLwF2TcEOURh5zfQWXBKUoNSgQWPWw26kry4tSMG+4FNMs5Hwboe+SpNWPcopywqxa/o5cTzQB9YYHpJjqmEXDhRt7QQqUjsZN9PuiJkYoU01OXuDTLNZ4pN8JGi4vl0daU/b6e8pTWmWszjmAldZ2FLUoUS8vFisAPqHLLddTbpkrUn/B3oeLw78Ji4hhwO+mHjDvJBZ89FUzwlTJB+VzmG+Q94j8pg477S/iTGTZIq8GhCGPWqCEviHpbz69CXO6k1vzfuzcM9WNCxB0Ku51eqdROibNFr+nj77bkleK96C0XwQl7+/3UaNBD6KVlTo/PKWi9rO7plAbvrXoUpW/lkY5YWqhBFM9t2hZF+cN11evySiNXkSws7ZIcr1WvRQumivpeQr7GO9BfyLx7H5bk0/76IZ7EeTOjVgTusk/4DC8+0f/th6JbTlbq9+3b3dAcWMClJUzM/92YeXxTu2RbvXT7006cu1tmSth1WpeuO+UPojxXj1hzReEXRdb8BLEQpAA==
+sidebar_class_name: "delete api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete an integration"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/integration/{identifier}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to delete an integration in your Port organization.<br/><br/>To learn more about integrations, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"identifier","description":"The installation id of the integration you want to delete.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

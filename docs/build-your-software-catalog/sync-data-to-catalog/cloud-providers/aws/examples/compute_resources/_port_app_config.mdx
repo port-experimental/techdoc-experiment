@@ -1,0 +1,131 @@
+<details>
+
+<summary>Mapping Configuration for Lambda, ECS Service, SQS, Lightsail, ElasticBeanstalk</summary>
+
+```yaml showLineNumbers
+resources:
+  - kind: AWS::Lambda::Function
+    selector:
+      query: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .Identifier
+          title: .Properties.FunctionName
+          blueprint: '"lambda"'
+          properties:
+            kind: .__Kind
+            region: .__Region
+            link: "'https://console.aws.amazon.com/go/view?arn=' + .Properties.Arn"
+            description: .Properties.Description
+            memorySize: .Properties.MemorySize
+            ephemeralStorageSize: .Properties.EphemeralStorage.Size
+            timeout: .Properties.Timeout
+            runtime: .Properties.Runtime
+            packageType: .Properties.PackageType
+            environment: .Properties.Environment
+            architectures: .Properties.Architectures
+            layers: .Properties.Layers
+            tags: .Properties.Tags
+            iamRole: "'https://console.aws.amazon.com/go/view?arn=' + .Properties.Role"
+            arn: .Properties.Arn
+          relations:
+            account: .__AccountId
+  - kind: AWS::ECS::Service
+    selector:
+      query: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .Identifier | split(":")[5] | split("/")[2] | split("|")[0]
+          title: .Identifier
+          blueprint: '"ecsService"'
+          properties:
+            kind: .__Kind
+            region: .__Region
+            link: >-
+              'https://console.aws.amazon.com/go/view?arn=' +
+              .Properties.ServiceArn
+            desiredCount: .Properties.DesiredCount
+            launchType: .Properties.LaunchType
+            cluster: .Properties.Cluster
+            schedulingStrategy: .Properties.SchedulingStrategy
+            loadBalancers: .Properties.LoadBalancers
+            securityGroups: >-
+              .Properties.NetworkConfiguration.AwsvpcConfiguration.SecurityGroups
+            subnets: .Properties.NetworkConfiguration.AwsvpcConfiguration.Subnets
+            taskDefinition: .Properties.TaskDefinition
+            iamRole: >-
+              .Role | if . == null then null else
+              'https://console.aws.amazon.com/go/view?arn=' + . end
+            arn: .Properties.ServiceArn
+          relations:
+            account: .__AccountId
+  - kind: AWS::SQS::Queue
+    selector:
+      query: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .Identifier | split("/")[4]
+          title: .Properties.QueueUrl | split("/")[4]
+          blueprint: '"sqs"'
+          properties:
+            kind: .__Kind
+            region: .__Region
+            link: .Properties.QueueUrl
+          relations:
+            account: .__AccountId
+  - kind: AWS::Lightsail::Instance
+    selector:
+      query: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .Identifier
+          title: .Properties.InstanceName
+          blueprint: '"lightsailInstance"'
+          properties:
+            link: >-
+                'https://console.aws.amazon.com/go/view?arn=' +
+                .Properties.InstanceArn
+            state: .Properties.State.Name
+            blueprintId: .Properties.BlueprintId
+            bundleId: .Properties.BundleId
+            arn: .Properties.InstanceArn
+            privateIpAddress: .Properties.PrivateIpAddress
+            publicIpAddress: .Properties.PublicIpAddress
+            cpuCount: .Properties.Hardware.CpuCount
+            ramSize: .Properties.Hardware.RamSizeInGb
+            regionName: Properties.RegionName
+            availabilityZone: .Properties.AvailabilityZone
+            monthlyTransfer: .Properties.MonthlyTransfer.GbPerMonthAllocated
+            ports: .Properties.Networking.Ports[](.FromPort | tostring + ' - ' + .ToPort | tostring + ' - ' + .AccessDirection)
+            username: .Properties.UserName
+            tags: .Properties.Tags
+          relations:
+            account: .__AccountId
+  - kind: AWS::ElasticBeanstalk::Application
+    selector:
+      query: 'true'
+      useGetResourceAPI: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .Identifier
+          title: .Properties.ApplicationName
+          blueprint: '"elasticBeanstalkApplication"'
+          properties:
+            link: >-
+                'https://console.aws.amazon.com/elasticbeanstalk/home?region=' +
+                .__Region +
+                '/application/overview?applicationName=' + .Properties.ApplicationName
+            applicationName: .Properties.ApplicationName
+            maxAgeInDays: .Properties.ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.MaxAgeInDays
+            maxCount: .Properties.ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.MaxCount
+            kind: .__Kind
+            region: .__Region
+          relations:
+            account: .__AccountId
+```
+</details>

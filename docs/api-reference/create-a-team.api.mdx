@@ -1,0 +1,71 @@
+---
+id: create-a-team
+title: "Create a team"
+description: "This route allows you to create a new team in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/)."
+sidebar_label: "Create a team"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVcGO4zYM/RWB3UNbOPFMj27RYrrooSjQHXTTk8cLKBYTa8e2vBSV2dTwvxeUkk0mk2Snx+bgCBRJie89UiMY9DXZga3roYBFY70iFxiVblv35NXWBcVO1YRajKrHJ8WoO2V72SN174iVo7Xu7T9a0sx/WlL+c/wsnGpRU686R6j00gWOwT5TdYP1o4qGBlVpXB067DlmqL5tmAdf5LlxtZ8PjnhuXe69m9FS17l8Zm6DtLH4lH83hwxYrz0UJSwkO1QZEH4K6PlXZ7ZQjFC7nrFnWephaG0dD8o/eil7BF832GlZ8XZAKMAtP2LNkMFAbkBii152e93hkZdnsv0ashcoohJP5Vaxuj1mCRlJqpmRxPVD+eHHb/KHh18eHny1X1ffH1vfwJRB8Ej+6GRNpLcvDn7Xo3KU0MZZp22rtDGE3qOXy8QsQqc2Rv7OXs4ydv5lkdN0ctprUDiyXABD0gpXltAIgRHhanpuZgo4ZeCxDmR5C0U5whI1IUlI0mbBifopku8H1/vE2Q83N/L3/HJvY4xRPtQ1er8KbbsVHb1aJ69Ld11N7vGY0V74xD50UJRScDVlIDV9XZXWnKEruyDWKdsBZu74HIkrR51mKMBoxhnbDqP+BvNfQwZyG2uEojNXuKqkK3o/FecFRFC0fzbxypLnPy8h0+orm4OtOdD5Pc+aw9muib/nGo+sZkJ/lYE2xgoMur0/KmGlW4+70A65cQYKGJznND0aKCDf3OZJ89IZtImAlSMEaqGA/QTVg90PUJiyc7vBHxyqQ5O9F6knNPetdmBjsH+g0JEkBneBG0e7+S8sSU80qIV9qUDa56/DQP7ts+6GFg8D9SClHe/l3lKdTpUD5LZfuXgny5IL4kN0d/87ZCBYJPfb+U2kznnudH904tv9g7Yj40SQX+bA//hJTFwxfuZ8aLXtY19RbIskoRI2t5CGTHwzG9FXUcI4LrXHv6mdJjF/Ckgyc6sMNpqsXgrcpYynHcWiukfcCqoJttlCzhb3NiS9nIxSUWKKuKtrHPiqb3XUAvfv3i8gg+XuWe+ckRjST5DFbwHSWJHGKN1oG6HV/TrotfimnKJKHQSEY1E/RlHvFlLVs9m8v+Gp2lMh8pWyzoaMY2qZafrin7YuRuyg3XsLe/Iq/gveRlU7
+sidebar_class_name: "post api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to create a new team in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","description":"The name of the new team.<br/>","pattern":"^[^;#/\\?\\s][^;#/\\?]*[^;#/\\?\\s]$"},"users":{"type":"array","description":"One or more e-mail addresses of users to add to the new team.<br/>","items":{"type":"string"}},"description":{"type":"string","description":"The description of the new team.<br/>"}},"required":["name"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Created successfully.","content":{"application/json":{"schema":{"description":"Created successfully.","type":"object","properties":{"ok":{"type":"any","enum":[true]},"team":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"provider":{"type":"string"},"description":{"type":"string"},"users":{"type":"array","items":{"type":"object","properties":{"email":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"picture":{"type":"string"},"status":{"type":"string"}}}}}}},"required":["team","ok"],"additionalProperties":false}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

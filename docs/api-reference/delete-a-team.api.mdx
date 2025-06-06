@@ -1,0 +1,71 @@
+---
+id: delete-a-team
+title: "Delete a team"
+description: "This route allows you to delete a team in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/)."
+sidebar_label: "Delete a team"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVE1v2zAM/SsCTy2gxu2OxjCgQHsYtkOxdafAB8Vmai22pVJUuszQfx8oO03aZsN2XA6ywy89Pj56hAZDTdazdQOUcN/aoMhFRmW6zj0FtXNRsVMNdihGxWh6ZQexk7pzxMrRgxnsTyMlFu9XVHzIx71THRoaVO8IlVm5yDk5aFW3WG9UNrSolo2rY48D5wrVWcvsQ1kUjavDwjvihXVFCO6CVqYu5LhwW6StxafifAEa2DwEKJdwL9Wh0uANmR4ZScwjhLrF3kA5Au88QgmByQ4PkDRYadobbkHDYHpx5od+wwsqcSi3zpgzC0LNkxn4wM/UPmggfIyWsIGSKWKqNASsI1neZUQrNIQkmKe8kifoEkgYvBsCBgH87vJSHi/B3OScRoVY1xjCOnbdTnio3cA4sCQY7ztbZ0KL70Gyjmn4u3KenEdiOyFxmyMCzbADDTjEHsqldFildNz0UsIrDaZprNxiurujYmvTBUzy09Ajt66BciZCrpVplFBsr4rMSjEK8QmEQtruZxqpgxL2UjHe7pUCSZ/yxnAIOJrGV+FkanA/k0OT3n7C3UEY15FbR7PQYdZOi6ZBgpS1tHY53XIn8Xk5ru8+ggaBPZF9tbgU3XkXuDd5LHP1m+MFe62/8TDb/3RFJ0oZf3DhO2MHISFPaZwHvoTtlQTmRdBQZloqDa0LLN5xXJmA36hLScyPEUl2qdKwNWTNSihfjtDYIO/NrLI/8Hj2ZZbrufrX7T7ZzYvV2Jouyj/QsMHd/quSqqT3ihGwk+u6rtHzUdKb5RXFPi/Kze3n2/tb0GCi8HYs102W6/wiF5zE9FrHEwo5ZXVOpozjtAwpPcdPrt9mzF3uo4WiKqX0C5LRNXY=
+sidebar_class_name: "delete api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a team"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/teams/{name}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to delete a team in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"name","description":"The name of the team you want to delete.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Deleted successfully.","content":{"application/json":{"schema":{"description":"Deleted successfully.","properties":{"ok":{"type":"any","enum":[true]}},"required":["ok"],"additionalProperties":false}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

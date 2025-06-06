@@ -1,0 +1,106 @@
+```json showLineNumbers
+{
+  "identifier": "pagerdutyIncident",
+  "description": "This blueprint represents a PagerDuty incident in our software catalog",
+  "title": "PagerDuty Incident",
+  "icon": "pagerduty",
+  "schema": {
+    "properties": {
+      "status": {
+        "type": "string",
+        "title": "Incident Status",
+        "enum": [
+          "triggered",
+          "annotated",
+          "acknowledged",
+          "reassigned",
+          "escalated",
+          "reopened",
+          "resolved"
+        ],
+        "enumColors": {
+          "triggered": "red",
+          "annotated": "blue",
+          "acknowledged": "yellow",
+          "reassigned": "blue",
+          "escalated": "yellow",
+          "reopened": "red",
+          "resolved": "green"
+        }
+      },
+      "url": {
+        "type": "string",
+        "format": "url",
+        "title": "Incident URL"
+      },
+      "urgency": {
+        "title": "Incident Urgency",
+        "type": "string",
+        "enum": [
+          "high",
+          "low"
+        ],
+        "enumColors": {
+          "high": "red",
+          "low": "green"
+        }
+      },
+      "priority": {
+        "type": "string",
+        "title": "Priority",
+        "enum": [
+          "P1",
+          "P2",
+          "P3",
+          "P4",
+          "P5"
+        ],
+        "enumColors": {
+          "P1": "red",
+          "P2": "yellow",
+          "P3": "blue",
+          "P4": "lightGray",
+          "P5": "darkGray"
+        }
+      },
+      "description": {
+        "type": "string",
+        "title": "Description"
+      },
+      "assignees": {
+        "title": "Assignees",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "user"
+        }
+      },
+      "escalation_policy": {
+        "type": "string",
+        "title": "Escalation Policy"
+      },
+      "created_at": {
+        "title": "Create At",
+        "type": "string",
+        "format": "date-time"
+      },
+      "updated_at": {
+        "title": "Updated At",
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": []
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "relations": {
+    "pagerdutyService": {
+      "title": "PagerDuty Service",
+      "target": "pagerdutyService",
+      "required": false,
+      "many": true
+    }
+  }
+}
+```

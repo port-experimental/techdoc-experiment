@@ -1,0 +1,71 @@
+---
+id: get-all-teams-in-your-organization
+title: "Get all teams in your organization"
+description: "This route allows you to fetch all of the teams in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/)."
+sidebar_label: "Get all teams in your organization"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVU1v4zYQ/SvEnFqAsZI9CkWBHBaLRYEiaNOT4QNNjiJuKFE7HDrrGvrvBUnJlhPtB3op6oMsz5fJee/NnMBg0GQHtr6HGh5bGwT5yCiUc/4liKOPgr1okHWbbMI3glsUjKoLwvYpgMSDJxaenlRv/1ap1uaXPVW/5sejFw4V9aLzhELtfeSSLYVuUT+LbGhRbI3XscOec4XdTy3zEOqqMl6HzeCJN9ZXIfgb2itdpceNPyAdLL5UP29AAqunAPUWHlN12EkYFKkOGSmZTxB0i52C+gR8HBBqUETqCBIsYxcW9sBk+yeQgH3sUkVrQEKvOgQJmlAxmnsGCXEw5/eB/MEaJJBXTZUQA1LYNJYC/15KFItTrwzYKevOvwarOdLFG1hxDLAbRwk2gfU5Ih3nc9XQWHQmvPr3BCmK4spYvqieL4A2ngQq3WZANuJjI2JAI4Xv3TFjEgbUtrFo5hov1jmxR2F77aJBkyiQAgnD4PuABXiQQPg5WkIDdaNcwHEnIaCOZPmYwdijIqTUXEJlai6YpbC5VEbk3e1t+rq+0x/IZPGARoSoNYbQROeOiQLa94w9pxQ1DM7qzKXqU0h5Swb8aMGJEX7/CfWE8oDEtpzOPy/Z1B8vlGGKuBsllHt9n3Jf+QNr3tJynCFfcVzIucLmxlOnGGpIpL1h22FKuXD4h1POVF87wlVnV/yZzf++I0Uka4UvClvzntW25py1tuabdPfWNX2WVN9OeMvEjJ0EZYxNjVDuYXGJIoiS2yG33kANT5jvqriFGqrDXTVXCkiHeYJFclDDPBjVYOe5CKNc88ZwCVgI8M8kg9LOWYYXOAb7Gy7Gyn3k1tM01mEaPS2qBH8ZRY3P6ZZdis+r4P7hI0hIxy76utvc5jb7wJ3KtJiqf0DOW+V6nSw3yeuBdrpo/P++rkrDGb9wNThl+6wOyuQuPNjC4Q7mGbKT0PrAyXo67VXAv8iNYzKXRZD4YWxQe3ceut9s3X+zFlYv/YzH5QI7KBdTUObsQZFNd4J6m+bpxLx02ZJ1rzUOvMh6M/dTlbPMPrx/BAkqpvYuOf+cOT+9pOpXQ32u/VoM5QjpmfS3mnI6FUWN4zm+uL6aMV1xjk4t2o3j+A8Xg1aU
+sidebar_class_name: "get api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all teams in your organization"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v1/teams"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to fetch all of the teams in your Port organization.<br/><br/>To learn more about teams, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"array","items":{"type":"string","enum":["id","name","createdAt","updatedAt","provider","description","users.firstName","users.lastName","users.email","users.picture","users.status"]}},"in":"query","name":"fields","description":"The fields you want to fetch for each team. If used, only the specified fields will be included in the response.<br/>","required":false}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Retrieved successfully.","content":{"application/json":{"schema":{"description":"Retrieved successfully.","type":"object","properties":{"ok":{"type":"any","enum":[true]},"teams":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"},"provider":{"type":"string"},"description":{"type":"string"},"users":{"type":"array","items":{"type":"object","properties":{"email":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"picture":{"type":"string"},"status":{"type":"string"}}}}}}}},"required":["teams","ok"],"additionalProperties":false}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

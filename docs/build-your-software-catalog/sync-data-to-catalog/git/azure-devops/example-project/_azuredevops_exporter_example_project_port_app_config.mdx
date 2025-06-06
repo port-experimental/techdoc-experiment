@@ -1,0 +1,26 @@
+<details>
+
+<summary> Integration mapping </summary>
+
+```yaml showLineNumbers
+resources:
+  - kind: project
+    selector:
+      query: 'true'
+      defaultTeam: 'true'
+    port:
+      entity:
+        mappings:
+          identifier: .id | gsub(" "; "")
+          title: .name
+          blueprint: '"project"'
+          properties:
+            state: .state
+            revision: .revision
+            visibility: .visibility
+            defaultTeam: .defaultTeam.name
+            link: .url | gsub("_apis/projects/"; "")
+
+```
+
+</details>

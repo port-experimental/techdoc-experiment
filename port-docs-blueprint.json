@@ -1,0 +1,76 @@
+{
+  "identifier": "documentation",
+  "title": "Documentation",
+  "icon": "Docs",
+  "schema": {
+    "properties": {
+      "content": {
+        "title": "Content",
+        "type": "string",
+        "format": "markdown",
+        "description": "Full markdown content of the documentation"
+      },
+      "summary": {
+        "title": "Summary",
+        "type": "string",
+        "description": "Brief summary of the document content"
+      },
+      "category": {
+        "title": "Category",
+        "type": "string",
+        "description": "Documentation category (e.g., API, Guide, Tutorial)"
+      },
+      "tags": {
+        "title": "Tags",
+        "type": "array",
+        "description": "Tags for categorizing and searching"
+      },
+      "lastUpdated": {
+        "title": "Last Updated",
+        "type": "string",
+        "format": "date-time",
+        "description": "When the documentation was last updated"
+      },
+      "filePath": {
+        "title": "File Path",
+        "type": "string",
+        "description": "Original file path of the documentation"
+      },
+      "wordCount": {
+        "title": "Word Count",
+        "type": "number",
+        "description": "Number of words in the document"
+      },
+      "readingTime": {
+        "title": "Reading Time",
+        "type": "number",
+        "description": "Estimated reading time in minutes"
+      }
+    },
+    "required": ["content", "category", "filePath"]
+  },
+  "relations": {
+    "parentDoc": {
+      "title": "Parent Document",
+      "target": "documentation",
+      "required": false,
+      "many": false,
+      "description": "Parent documentation for hierarchical structure"
+    },
+    "relatedDocs": {
+      "title": "Related Documents",
+      "target": "documentation", 
+      "required": false,
+      "many": true,
+      "description": "Related documentation pages"
+    }
+  },
+  "calculationProperties": {
+    "searchableContent": {
+      "title": "Searchable Content",
+      "calculation": ".properties.content + \" \" + .title + \" \" + (.properties.tags // [] | join(\" \"))",
+      "type": "string",
+      "description": "Combined searchable text for AI agent queries"
+    }
+  }
+} 

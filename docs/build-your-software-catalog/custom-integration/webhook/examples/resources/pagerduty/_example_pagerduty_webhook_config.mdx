@@ -1,0 +1,43 @@
+```json showLineNumbers
+[
+  {
+    "blueprint": "microservice",
+    "filter": ".body.event.event_type | startswith(\"service\")",
+    "entity": {
+      "identifier": ".body.event.data.id",
+      "title": ".body.event.data.summary",
+      "properties": {
+        "status": ".body.event.data.status",
+        "url": ".body.event.data.html_url",
+        "oncall": ".body.event.data.__oncall_user[] | select(.escalation_level == 1) | .user.email",
+        "escalationLevels": ".body.event.data.__oncall_user | map(.escalation_level) | unique | length",
+        "meanSecondsToResolve": ".body.event.data.__analytics.mean_seconds_to_resolve",
+        "meanSecondsToFirstAck": ".body.event.data.__analytics.mean_seconds_to_first_ack",
+        "meanSecondsToEngage": ".body.event.data.__analytics.mean_seconds_to_engage",
+      }
+    }
+  },
+  {
+    "blueprint": "pagerdutyIncident",
+    "filter": ".body.event.event_type | startswith(\"incident\")",
+    "entity": {
+      "identifier": ".body.event.data.id",
+      "title": ".body.event.data.title",
+      "properties": {
+        "status": ".body.event.data.status",
+        "url": ".body.event.data.html_url",
+        "urgency": ".body.event.data.urgency",
+        "assignees": ".body.event.data.assignments | map(.assignee.email)",
+        "escalation_policy": ".body.event.data.escalation_policy.summary",
+        "created_at": ".body.event.data.created_at",
+        "updated_at": ".body.event.data.updated_at",
+        "priority": ".body.event.dataif .priority != null then .priority.summary else null end",
+        "description": ".body.event.data.description"
+      },
+      "relations": {
+        "microservice": ".body.event.data.service.id"
+      }
+    }
+  }
+]
+```

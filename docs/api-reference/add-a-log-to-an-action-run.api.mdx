@@ -1,0 +1,71 @@
+---
+id: add-a-log-to-an-action-run
+title: "Add a log to an action run"
+description: "This route allows you to send a log message back to Port, which will be displayed in the action run's page. You can also use this route to update the run's termination status (SUCCESS/FAILURE) and label describing the status.<br/><br/>To learn more about action runs, check out the [documentation](https://docs.port.io/create-self-service-experiences/reflect-action-progress/)."
+sidebar_label: "Add a log to an action run"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV0tv2zgQ/ivEXLYFZCspuhfDMOBms0DRAg2S9LBIjYASxxZrilT5sOM19N8XI0qW7DhtL4vtYS82TXKG8/jmm/EeBLrcyspLo2EC94V0zJrgkXGlzNaxnQnMG+ZQC8aZMitWonN8hSzj+ZqOboz1CdsWMi/YVirFMmRCukrxHQomNfMFMp7TC8wG/ZtjFV/hmP1lAsu5Zlw5w4JD5vvHvWGhEpxWBbZSHm0pNW/0OM99cOzV3eerq+u7u/TP+fuPn2+vXzOuBVM8Q8WiY5nUq0ZHlBhPM5vOmo97wxRyq1lpLDKemeAHVrqE5QXma0bbJP8gTB5K1L4xYPGq8L5ykzQVJnfjylg/libNLXKPI4dqOXJoNzLHET5VaCXqHF1qcakw96P4zqiyZmXRufT1GBLwfOVg8gDzaMRt0A4WCVj8FtD5d0bsYLKH3GiP2tOSV5WSeWNP+tVR/vbg8gJLTiu/qxAmYLKvmHtIoLKmQusluua0D+ZdE5mBiPNW6hUkz7CB53JglicJHrMrrgkECpeeZYrrNZPLBkhGqx3bcu3PQypmBxJAHUoKRZteSKBNMCzqBOLDHynLP7Z63sLBmw4ROMDDv2B9nUC78XMhHZZUp3dYWp3aOgEuhCRJrm4GyVxy5TDiRFoUFLfOgEVNYv2JtwHrBCpueYkeLeHtDGZaa+sEJFlZcV9AApqXdGiDfpQCnqldJOAwD1b6XaM1Q27RwuRhUTcodpXRLoLvzcUlfZ0kSggUzIU8R+eWQakdFcVPw/0Y3mY9cIfrXY8pspVAZIP+aFY/LhQpzgbGBv3+/MmLya8TiPwg3u2+dzr354CzNLbkHiZArDjyskQ4zu0DxKw0hvVmDB8dPrE4lTZrYpvvQuw4YZ8+QN3g6+3F2+fp/KSxK66loVZCRIzWGuuYyfNgLYrJF/1FTz3PFM5oYWdfNGNTX8yu6eI09cVh549ee7s/TRuBXkzMptlMG/+4NEGLaZrNpqkXh8P7ozpnW+mLxrzKmo0k7EmB2sulRMu23DFtPGs1NVq699LOYMrZ2zdvfh3fpd5wJcVj2zLORkBwz3uXhcHoaMl9HsMRG3AsrBPPj18jIsCnggfn8Xm0532kubLIxY4tpZauQMHwCfPQevNiZH+/uPiVIuvRaq4eMao4dVaz7ka05mDMyx42VOELI4hhjWuYh4h2AunmMo1AdSmNIuk+cm6dKrNyQDxrNx15B6tgAt00wivZDSNQJ+dOg+svDCj7jvIdGa8j7p4/K/kBd30HmAdfGCv/bqgY2iZRIBdoG7eInG/7qeX6iZeVwhemjkGPP+rrPfMdCPWoLy1No1B60gzUKNn85j0kQJGJYLkcX9BdCm7Jm3bROSC61u0Nown0gNXTDj2Yt/6fjf/L2Tgi0eOTTyvFZcMQDbj3bdU8wOYSEmjrJjZC+poc5pWmeBYJFFRskwfY7zPu8LNVdU3b3wJamlwWCWy4lVSnTYEJ6WgtznfBIUBe3bbt9DV7yeSjiWTDVaBfkMAad/1oVdN80tYTWRAPr+I7o3tS0Qs/m4qo7KPEPM+x8t+9uxiQ0M2nu3tIIGv/aJRGNOMe31Iw+TYaaqoY38k+7u1Bcb0KsT6jzmZSDZSTIYOsGwZpF+TV2VCcUkt0hD7JrbMi+33kp7o+3I9HL0q0oe1uU2ZoUP4HBxs2Rg==
+sidebar_class_name: "post api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Add a log to an action run"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/actions/runs/{run_id}/logs"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to send a log message back to Port, which will be displayed in the action run's page. You can also use this route to update the run's termination status (SUCCESS/FAILURE) and label describing the status.<br/><br/>To learn more about action runs, check out the [documentation](https://docs.port.io/create-self-service-experiences/reflect-action-progress/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"run_id","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"terminationStatus":{"type":"string","description":"The termination status of the action run. Can be left blank if you only want to send a log message.<br/>","enum":["SUCCESS","FAILURE"]},"statusLabel":{"type":"string","description":"A label to describe the status of the action run. Can be left blank if you only want to send a log message.<br/>"},"message":{"type":"string","description":"The log message to send back to Port.<br/>"}},"additionalProperties":false,"required":["message"]}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Added successfully.","content":{"application/json":{"schema":{"properties":{"ok":{"type":"any","enum":[true]},"runLog":{"type":"object","properties":{"id":{"type":"string"},"runId":{"type":"string"},"message":{"type":"string"},"createdBy":{"type":"string"},"createdAt":{"type":"string","format":"date-time"}},"required":["id","runId","message","createdBy","createdAt"]}},"required":["ok"],"additionalProperties":false,"description":"OK"}}}},"404":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>not_found</b></td>\n  <td>The action run with the provided identifier was not found</td>\n</tr>\n</table>\n"},"422":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>invalid_request</b></td>\n  <td>The data provided does not match the route schema</td>\n</tr>\n<tr>\n  <td><b>run_exhausted</b></td>\n  <td>Action run already finished execution</td>\n</tr>\n</table>\n"},"500":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>internal_error</b></td>\n  <td>An internal error occurred</td>\n</tr>\n</table>\n"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: create-a-migration
+title: "Create a migration"
+description: "This route allows you to create a migration in your Port organization.<br/><br/>You can use this to migrate data from one blueprint to another, or to convert the data type of a property in a blueprint."
+sidebar_label: "Create a migration"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdV0tv20YQ/iuLzaENQEpJj0JRwGl7KIqiRuIeClmAhuRI3JjcpWeHdhiB/z2YXVKkZDt2X5deZJI7O49v5psZH3SBPifTsHFWr/RVabwi1zIqqCp371XnWsVO5YQgH1Vt9gQirYyVQ1KXjlg52oM1n8PJ4vuMlj+Enz9dq3KwqvWoWHSzGzSgKoBB7cjVyllUWdViQ8ayiIB1XCIlylEw7uwdEisuh1vcNajcToFqyDVI3Ik3MClZ6EQz7L1erfVvo8debxJNeNui53eu6PTqoHNnGS3LIzRNZfIgufzoBY6D9nmJNciTmNQr7bKPmLNO9GDYoA9yrqUc343mZxc8k7F7nTwAGpUp0LLZGSSJRYKbQAi43JcmL8PBhPq9qSqVoWqQdo5qLCLauk90DU0jth7x9qHxAnfGmqCy9ViExEAzQRwckLcY2sw1Y9mFEwbaI5+CfgpL9k8BeWDiGOzOVIz0vN4Lq1x4hkp5ZFG8zp0tQuh+823J3PjVclm43C8aR7wwbtmQqx1j6nNHmAMVfvlquvRawIr2g5PitESsuAQ+Jmgo81l+DGPtr9wlkMcXOK62H2+36rZF6qJmvIOqBUYfKaKACDoJKChOjnkcuFq3FZummvkHrJzNcaE+IKraESpjpYhiZa1LJHwCkKw1VZEK3VPvdnwPhGkODJXbL/PWs6vNZ0yNZRy5tsyd3Zl9S5gOdbl8FR1LR8fS0bFUii0Fm4aIUmhMGiv39QRekO2eZ+JUQy+GGD81hN7PqSBF93UaJCKWYbwBXvIxK9+dm5VGN0XBhquX5/5fcSzQSMyOnDr3yeSx172An7mzT2lhhPplWkRypkJlWDm7l6KetJ3m9OvdTBgeTmROMBhr7D7on5ScOq3AFvJqSAmj0CcyPbbX+ga7a7261uHrtd6qBgx5dS/ECPe3N9htlfFz9d03fpb5ZFSutkFLkDbso6UhwERDEXsJVJePRTqg1/cyr6pheP19II46/hMcRu3P43CUxmJw4eTOX0anjwDdtoawkFE/NInN+ffz8TzNys1T1nZQeTwzwNRin2iPeUuhGa0POkMg6TXrTR+2C98466O73715I39Ok/QT7qCtWL0fJEOSa+TSFXqlG+dDSwMu9Uov794u62l7Ect0h+SD4ZYqvdJjt4bGjM1a98ljp62fBDZTEB9kwxmm9RDKEWhozK/Y6URbqOX9ouXS0bDl6UQbCahEKJBCGLI1vZ/2q58/Qd3EdvdgP5oaxGxryR47Hwf99OV0jk7fpxExHwLT+dB8Z4pC55sJhB42vZ90oTMuxuKT+RkAG1SHXfji8hedaElUTPnbxZvQ05znGkKrHfD88cFSfc7p2YL6/9rNY4ExfuJlU4GxAlCo2cNQ/Gt991aq42R5L4Ueq7U+HDLw+AdVfS+fw44kFEz0HZCBTHKx3vTJWJzClxvsBPIIZ3olDiSxw4VKP9v9hSJHVl7+/uFKJzob/meoXSF3CO51En5XWic6bpmBSOHbQVdg9y3sRTbqlIqBVqKbU+wmUGx4EE/HI9vNPDznXgxHfoXuj145HCKB+/4oH4+evDHANUpLWjZ9338BH3n9ZA==
+sidebar_class_name: "post api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create a migration"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/migrations"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to create a migration in your Port organization.<br/><br/>You can use this to migrate data from one blueprint to another, or to convert the data type of a property in a blueprint.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"sourceBlueprint":{"type":"string","description":"The identifier of the blueprint from which the migration will be performed.<br/>"},"mapping":{"type":"object","description":"The definition used to map the data from the source blueprint into the target blueprint.","properties":{"blueprint":{"type":"string","description":"The identifier of the target blueprint.<br/>"},"filter":{"type":"string","description":"An optional set of [conditions](https://docs.port.io/promote-scorecards/#conditions) to filter the entities that will be migrated.<br/>"},"itemsToParse":{"type":"string","description":"A `jq` query that evaluates to an array of items, used to create multiple entities at once. See more information [here](https://docs.port.io/build-your-software-catalog/customize-integrations/configure-mapping/#create-multiple-entities-from-an-array-api-object).<br/>"},"entity":{"type":"object","properties":{"identifier":{"type":"string","description":"A `jq` expression used to get data from the source blueprint, to be used as an identifier for the entity.<br/>"},"title":{"type":"string","description":"A `jq` expression used to get data from the source blueprint, to be used as the title of the entity.<br/>"},"icon":{"type":"string","description":"The icon of the entity.<br/>"},"team":{"type":"string","description":"The team the entity belongs to.<br/>"},"properties":{"type":"object","description":"An object containing the properties of the entity and their values, in `\"key\":\"value\"` pairs where the `key` is the property's identifier, and the `value` is its value.<br/>","additionalProperties":{"type":"string"}},"relations":{"type":"object","description":"An object containing the relations of the entity and their values, in `\"key\":\"value\"` pairs where the `key` is the relation's identifier, and the `value` is the related entity's identifier.<br/>","additionalProperties":{"type":"string"}}}}},"required":["entity"]}},"required":["sourceBlueprint","mapping"],"additionalProperties":false}}},"required":true}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

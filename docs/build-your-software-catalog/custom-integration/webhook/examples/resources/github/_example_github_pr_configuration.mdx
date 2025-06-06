@@ -1,0 +1,16 @@
+```json showLineNumbers
+[
+  {
+    "blueprint": "pullRequest",
+    "filter": ".headers.\"x-github-event\" == \"pull_request\"",
+    "entity": {
+      "identifier": ".body.pull_request.id | tostring",
+      "title": ".body.pull_request.title",
+      "properties": {
+        "author": ".body.pull_request.user.login",
+        "url": ".body.pull_request.html_url"
+      }
+    }
+  }
+]
+```

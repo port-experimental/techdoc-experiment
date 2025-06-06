@@ -1,0 +1,45 @@
+```json showLineNumbers
+{
+  "identifier": "terraformResourceMapper",
+  "title": "Terraform Resources Mapper",
+  "description": "A webhook configuration to map Terraform tfstate file",
+  "icon": "Terraform",
+  "mappings": [
+    {
+      "blueprint": "terraformOutput",
+      "filter": ".body | has(\"outputs\")",
+      "itemsToParse": ".body.outputs",
+      "entity": {
+        "identifier": ".item.name | tostring",
+        "title": ".item.name | tostring",
+        "properties": {
+          "description": ".item.description",
+          "sensitive": ".item.sensitive",
+          "type": ".item.type",
+          "value": ".item.value",
+          "lineage": ".body.lineage"
+        }
+      }
+    },
+    {
+      "blueprint": "terraformResource",
+      "filter": ".body | has(\"resources\")",
+      "itemsToParse": ".body.resources",
+      "entity": {
+        "identifier": ".item.id",
+        "title": ".item.name",
+        "properties": {
+          "mode": ".item.mode",
+          "module": ".item.module",
+          "type": ".item.type",
+          "provider": ".item.provider",
+          "instances": ".item.instances",
+          "lineage": ".body.lineage"
+        }
+      }
+    }
+  ],
+  "enabled": true,
+  "security": {}
+}
+```

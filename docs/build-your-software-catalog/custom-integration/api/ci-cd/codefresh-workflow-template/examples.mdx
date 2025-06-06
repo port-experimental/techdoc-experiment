@@ -1,0 +1,190 @@
+import ExampleImageBlueprint from "../_ci_example_image_blueprint.mdx";
+import ExampleCiJobBlueprint from "../_ci_example_ci_job_blueprint.mdx";
+
+# Examples
+
+## Basic create/update example
+
+In this example you will create blueprints for `ciJob` and `image` entities, and a relation between them. Then you will add code that uses Port's Codefresh workflow template to create new entities every time the Codefresh CI workflow runs:
+
+<ExampleImageBlueprint />
+
+<ExampleCiJobBlueprint />
+
+After creating the blueprint, you can add the following snippet to your Codefresh workflow template `yml` file to create the new ciJob entity in your Codefresh CI:
+
+```yaml showLineNumbers
+- name: entity-upsert
+  templateRef:
+    name: port
+    template: entity-upsert
+  arguments:
+    parameters:
+    - name: PORT_CREDENTIALS_SECRET
+       value: "port-credentials"
+    - name: PORT_CLIENT_ID_KEY
+      value: "PORT_CLIENT_ID"
+    - name: PORT_CLIENT_SECRET_KEY
+      value: "PORT_CLIENT_SECRET"
+    - name: BLUEPRINT_IDENTIFIER
+      value: "ciJob"
+    - name: ENTITY_IDENTIFIER
+      value: "new-cijob-run"
+    - name: ENTITY_PROPERTIES
+      value: |
+      {
+        "runLink": "${{CF_BUILD_URL}}",
+        "triggeredBy": "${{CF_BUILD_INITIATOR}}"
+      }
+```
+
+## Basic get example
+
+The following example gets the `ciJob` entity from the previous example. This can be useful if your CI process needs to reference data from the ciJob (for example, the user who triggered the last job) when deploying the latest version of your service.
+
+Add the following steps to your workflow `yml` file:
+
+```yaml showLineNumbers
+- name: entity-get
+  templateRef:
+    name: port
+    template: entity-get
+  arguments:
+    parameters:
+    - name: PORT_CREDENTIALS_SECRET
+       value: "port-credentials"
+    - name: PORT_CLIENT_ID_KEY
+      value: "PORT_CLIENT_ID"
+    - name: PORT_CLIENT_SECRET_KEY
+      value: "PORT_CLIENT_SECRET"
+    - name: BLUEPRINT_IDENTIFIER
+      value: "ciJob"
+    - name: ENTITY_IDENTIFIER
+      value: "new-cijob-run"
+```
+
+:::tip
+For an example showing how to make use of the output from the `entity-get` workflow template, go to [complete example](#complete-example).
+:::
+
+## Complete example
+
+Here is a complete workflow `yml` to create both `image` entity, and a `cijob` entity with a relation between them, and then print the complete JSON of the new `image` entity:
+
+```yaml showLineNumbers
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: port.codefresh-complete-example.0.0.1
+  annotations:
+    port/version: "0.0.1"
+    port/description: "This Workflow Template is used to create an image entity, a ciJob entity and then print the JSON of the new image"
+spec:
+  arguments:
+    parameters:
+  entrypoint: ci-tasks
+  templates:
+    - name: ci-tasks
+      metadata:
+        annotations:
+      dag:
+        tasks:
+          - name: entity-upsert-image
+            templateRef:
+              name: port
+              template: entity-upsert
+            arguments:
+              parameters:
+              - name: PORT_CREDENTIALS_SECRET
+                value: "port-credentials"
+              - name: PORT_CLIENT_ID_KEY
+                value: "PORT_CLIENT_ID"
+              - name: PORT_CLIENT_SECRET_KEY
+                value: "PORT_CLIENT_SECRET"
+              - name: BLUEPRINT_IDENTIFIER
+                value: "image"
+              - name: ENTITY_IDENTIFIER
+                value: "example-image"
+              - name: ENTITY_PROPERTIES
+                value: |
+                {
+                  "imageTag": "v1",
+                  "synkHighVulnerabilities": "0",
+                  "synkMediumVulnerabilities": "0",
+                  "gitRepoUrl": "https://github.com/my-org/my-cool-repo",
+                  "imageRegistry": "docker.io/cool-image",
+                  "size": "0.71",
+                  "unitTestCoverage": "20",
+                  "unitTestCoverage": "50",
+                }
+          - name: entity-upsert-cijob
+            dependencies:
+              [entity-upsert-image]
+            templateRef:
+              name: port
+              template: entity-upsert
+            arguments:
+              parameters:
+              - name: PORT_CREDENTIALS_SECRET
+                value: "port-credentials"
+              - name: PORT_CLIENT_ID_KEY
+                value: "PORT_CLIENT_ID"
+              - name: PORT_CLIENT_SECRET_KEY
+                value: "PORT_CLIENT_SECRET"
+              - name: BLUEPRINT_IDENTIFIER
+                value: "ciJob"
+              - name: ENTITY_IDENTIFIER
+                value: "new-cijob-run"
+              - name: ENTITY_PROPERTIES
+                value: |
+                {
+                  "runLink": "${{CF_BUILD_URL}}",
+                  "triggeredBy": "${{CF_BUILD_INITIATOR}}"
+                }
+              - name: ENTITY_RELATIONS
+                value: |
+                {
+                  "image": ["example-image"]
+                }
+          - name: entity-get
+            dependencies:
+              [entity-upsert-image, entity-upsert-cijob]
+            templateRef:
+              name: port
+              template: entity-get
+            arguments:
+              parameters:
+                - name: PORT_CREDENTIALS_SECRET
+                  value: port-credentials
+                - name: PORT_CLIENT_ID_KEY
+                  value: PORT_CLIENT_ID
+                - name: PORT_CLIENT_SECRET_KEY
+                  value: PORT_CLIENT_SECRET
+                - name: BLUEPRINT_IDENTIFIER
+                  value: "image"
+                - name: ENTITY_IDENTIFIER
+                  value: "example-image"
+          - name: log-info
+            dependencies: [entity-get]
+            template: log-info
+            arguments:
+              parameters:
+                - name: INFO
+                  value: "{{workflow.outputs.parameters.PORT_COMPLETE_ENTITY}}"
+
+    - name: log-info
+      inputs:
+        parameters:
+          - name: INFO
+      script:
+        image: alpine:latest
+        command: ["/bin/sh"]
+        env:
+          - name: INFO
+            value: "{{ inputs.parameters.INFO }}"
+        source: |
+          set -e
+          echo ${INFO}
+```
+
+That's it! The Entity is created or updated and is visible in the UI.

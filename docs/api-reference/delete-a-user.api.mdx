@@ -1,0 +1,71 @@
+---
+id: delete-a-user
+title: "Delete a user"
+description: "This route allows you to delete a user in your Port organization.<br/><br/>To learn more about users, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/)."
+sidebar_label: "Delete a user"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVMFu2zAM/RWBpxZQ43ZHYxhQID0M26HY2lNgDIrN1FpkS6WkdJmhfx8oO43bZsOw23JQbImk+B7f8wAN+pq0C9r2UMJdq70gGwMKZYx98mJvowhWNGiQN0X0SEL3vE/i1lIQlh5Ur38qLrF4v6biQ17urDCoqBedJRRqbWPIyV6KusV6K3gjtChWja1jh33IFaqzNgTny6JobO0XzlJYaFt4by9oreqClwu7Q9ppfCrOFyAhqAcP5QruuTpUEpwi1WHgt3I1gK9b7BSUA4S9QyjBB9L9AyQJmkE7FVqQ0KuOD7nHb9gpbUC+YQdFPhGqaQi9F3aTIWRSmKkn1YcjXSMbIIHwMWrCBspAEVMlwWMdSYd9bnCNipAYwphXxhEJBxJ6Z3uPnvt/d3nJfy+7WuacRvhY1+j9JhqzZ1pq2wfsAyco54yuM7/Fd89Zc1b+rpwj65CCHjux2xmfqt+DBOxjB+WKEVYpzUGvOLySoJpG8y3K3M6KbZTxmPgnocPQ2gbKiQi+lodTQrG7KjIrxXAcUAImknaHQUcyUMJBP8rpg3wgyVOn0R8DZjP5ysyMMA+TOUJ1+hPuj2q5jqG1NKkfJkG1qBokSFlgG5vTdTAcnx1zffsRJHDbI+VXi0sWo7M+dCoPZ6q+nLvutRyH44T/U9+OlAb8EQpnlO6ZhDylYRr7CnZXIGG0g4Ry5s1KQmt94JhhWCuP92RS4u3HiMS+qiTsFGm1ZuJXAzTa83MzKe4PbJ59maR7Lv7Z8ifBvfDLTpnIbyBhi/uXX55UJXmQEfc+BlzXNbowS33ja5bxs4eWN59v7m5AgopM5lzD26zh6YEvONnZa3GPXfDKfjqZMgyjQ1J6jh+PfpsxoTxEM1FVSukXSmVHbA==
+sidebar_class_name: "delete api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a user"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/users/{user_email}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to delete a user in your Port organization.<br/><br/>To learn more about users, check out the [documentation](https://docs.port.io/sso-rbac/rbac-overview/).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"user_email","description":"The email address of the user you want to delete.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Deleted successfully.","content":{"application/json":{"schema":{"description":"Deleted successfully.","properties":{"ok":{"type":"any","enum":[true]}},"required":["ok"],"additionalProperties":false}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

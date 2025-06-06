@@ -1,0 +1,41 @@
+```json showLineNumbers
+[
+  {
+    "blueprint": "microservice",
+    "filter": ".body.event.event_type | startswith(\"service\")",
+    "entity": {
+      "identifier": ".body.event.data.identifier",
+      "title": ".body.event.data.title",
+      "properties": {
+        "status": ".body.event.data.properties.status",
+        "url": ".body.event.data.properties.html_url",
+        "oncall": ".body.event.data.properties.__oncall_user[] | select(.escalation_level == 1) | .user.email",
+        "escalationLevels": ".body.event.data.properties.__oncall_user | map(.escalation_level) | unique | length",
+        "meanSecondsToResolve": ".body.event.data.properties.__analytics.mean_seconds_to_resolve",
+        "meanSecondsToFirstAck": ".body.event.data.properties.__analytics.mean_seconds_to_first_ack",
+        "meanSecondsToEngage": ".body.event.data.properties.__analytics.mean_seconds_to_engage",
+      }
+    }
+  },
+  {
+    "blueprint": "pagerdutyIncident",
+    "filter": ".body.event.event_type | startswith(\"incident\")",
+    "entity": {
+      "identifier": ".body.event.data.identifier",
+      "title": ".body.event.data.title",
+      "properties": {
+        "status": ".body.event.data.properties.status",
+        "url": ".body.event.data.properties.url",
+        "details": ".body.event.data.properties.details",
+        "priority": ".body.event.data.properties.priority",
+        "urgency": ".body.event.data.properties.urgency",
+        "responder": ".body.event.data.properties.responder",
+        "escalation_policy": ".body.event.data.properties.escalation_policy"
+      },
+      "relations": {
+        "microservice": ".body.event.data.relations.microservice"
+      }
+    }
+  }
+]
+```

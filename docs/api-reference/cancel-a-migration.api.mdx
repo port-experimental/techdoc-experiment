@@ -1,0 +1,71 @@
+---
+id: cancel-a-migration
+title: "Cancel a migration"
+description: "This route allows you to cancel a running migration in your Port organization."
+sidebar_label: "Cancel a migration"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1vEzEQ/SvWnEAy2ZbjCiFB4YAQImrLKYrQZHeSdbux3bE3bVj5v6PZdT6aBi6IS+K1n+333rxxDzWFio2Pxlko4bYxQbHrIilsW/cY1NZ1KjpVoa2oVai4s9bYlVqbFaPsUsYKiNXUcVSOV2jNr2FlAhoirgKUM/i2gweYa2B66CjEj67eQtlD5WwkG2WI3remGpDFXRBOPYSqoTXKKG49QQlucUdVBA2enSeOhoKsMmHekXEhsrEr0C9Ekhqxauk4S2tFVGzoIGzybsHFe0hJA9a1kSlsp0c3LrENlJIAPDKuKRKL2DOMM5OkwQgDj7EBDRbXsri/8aepz5I1NdloloZYueVzkkN9HtHGQ5Ey79Flw1RDGbmjNNcQqOrYxO1AckHIxFDO5mkoSfDOhtHJtxcX8vecySdaYtdGdZ2RgzNrio2rRZILQ0VEWQnF5rLYcwxFfywxFSNPED682XnWcQslNDH6UBYFejPxjuPEOEj63GoXDoAjaTdi/ahiJ3BfBfTmK20Pxn/oYuM4pxVybRrCmngQJwG8PkT18xOufUvHUXtW2KUb7jJRMDC0w4fpF9AgGkcPLycXghWz1jhENVO52vXX3qnTJBy1yX9o09GgSE+x8C0aKywHz/tc0hlsLkEfshpAQ3mS3FzXuYZG0lDOoO8XGOgHtynJ9ENHLOGba9ggG1yIU7MeahNkXOee+ovyV9c51K/VP3TGWbm7kFhJyAbbTr5Awz1tT5s0zZPeBUX4j5CrkeWbWznocMSLJ03iuu+b6febW9CwyE/h2tWyh/FRGhgfRwrOj5ZL8mSuhxbtqsOVYMczh2eqk0odx/1+iHseCNOzIk/7YJQjv9J6Z7f0/dhMKe3x49Ifd2S7dmjxfJ5S+g2iyUAn
+sidebar_class_name: "post api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Cancel a migration"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v1/migrations/{migration_id}/cancel"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to cancel a running migration in your Port organization.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"path","name":"migration_id","description":"The identifier of the migration you want to cancel.<br/>","required":true}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"reason":{"type":"string","description":"The reason for cancelling the migration.<br/>"}},"additionalProperties":false}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Default Response"}}}
+>
+  
+</StatusCodes>
+
+
+      

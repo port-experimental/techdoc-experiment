@@ -1,0 +1,71 @@
+---
+id: delete-all-entities-of-a-blueprint
+title: "Delete all entities of a blueprint"
+description: "This route allows you to delete all entities of a specific blueprint in your software catalog.<br/><br/>To learn more about entities, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/#entities)."
+sidebar_label: "Delete all entities of a blueprint"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVttuGzcQ/ZUB85IAK63tpi+CKiBAXCBogAat+1DYgkztzmoJU+RmOJSiCvr3YvYq25LbogUatC/ymhySZ+acuexVjiEjU7HxTk3UTWkCkI+MoK312wA7H4E95GixWQR0bNhgAF+AhlBhZgqTwdJGrMg4BuPkFEHwBW81IWSatfWr8XRJ6az+ufFgUZODtScEvfSR+3sTyErMHkDWuES4zX0W1+hYC8j565K5CpM0zX0WxpUnHhufLqOx+UieHXXPjtpn07Bz2SjXrEfs+8VX3XNvxipRrFdBTW7Vdbuo5omqNOk1MpLs7FXISlxrNdkr3lWoJiowGbdSh0QZCd3niLRTiXJ6LbsU3cLkKlGEn6MhzNWk0DZg8iTiv/oImXZQkd+YHEHDfXP0XsKuQ/CZ0Yx1JBoS8oGBreHymINbncm1QPFcnDJCzTgKaItRQNqYDEf4pUIy6DIMKWFhMeNRc9GoIr8iDCF9xTvjVqPuZYmkdp0VRfemIVcdkhORWnpvUbtzoWrcWvQC+uOgfSjgninifQIsis1El1tjLWgberFKyI5UyeL0SzBbQhO1Nu4juhWXanLZYa40lwPk/tqFySUmhUF6BFvQPUV9UyIM5pI+jxFuSx9wIFcyb6sdD+nXgZ8nKmAWyfCuluYSNSGpye1ctghD5V3AIK5dXVzIn8dAOpX3ggoxyzCEIlq7E5beXnzz/NSPDjvMhZfiYNwKkMhTAJ9lkQjzyZ27c1PWS4sz+aDZnQOYcjm7FsNpymW/8n64vV2fpvWB4Vg+my5naxOCcatFhVR/ehem6XI2TTnvzSSLcg/OM5R6g3BkK+GrkApP6xq7cIRBvPYVUl1TxvC9JygicYkEObI2NiRQWdQBIfOOdcZNTdP52rj26dNwSx0WOVbohOnnSEUENcU7KLUw0FoOvHOpGdYxMCyHlNfWu1WT74bHcOPFXbFMIAaEuy6Jhpe/EwneqSdY046bhua3Xw/NzvOi8NHlz0L27jhHJAKCra2XOdwPKXUPWx1qEbQXveD61dXX47pxG21NvmileVIzvb/SyCD32Di61pw1AWm6dlPUXvL821MV4d/znJGctgtsrnjKvIPOokHTgznv4SFRa+TS531nUUlTvScq3VymvZZCuj9Vxg+ptrZvdEpKLW26ISCSVRPVdVZdma6x1h3l+W4Mg8FR1f5ZWGoKdFe7+y6kK/MDHnXHd5FLT+a3ulKpthuVqHOk2lnjCl8fN2zF/pMnhnefPqhECeyG38vxhXBf+cBr7cS8vf39ubnuuBs/0speSUFEx//ncbGhivELp5XVpk6smv19K7VbtblUyTAniJAmZ6aGR3qbJ6r0geWG/X6pA/5C9nCQ5WZqEhXmJojcz0xHxwT9x6bLM5F/wN3xxL3RNopRnZN/PlZ/e6h8Ed2JIXfAOZd/yAjQv0jw65/akfMN/FPj5Rk3uvLkdsfQO/dOSvswPy7G768/Xt9ci96jZMhxwXuoC177IQE4+djTSti8LL9C9Mkj+31TTg+H3r7ZOnuiraydtfg+PxwOvwPQHVaL
+sidebar_class_name: "delete api-method"
+info_path: api-reference/port-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete all entities of a blueprint"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v1/blueprints/{blueprint_identifier}/all-entities"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This route allows you to delete all entities of a specific blueprint in your software catalog.<br/><br/>To learn more about entities, check out the [documentation](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/#entities).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"in":"query","name":"run_id","required":false,"description":"You can provide a `run_id` to associate the deleted entities with a specific [action run](https://docs.port.io/create-self-service-experiences/reflect-action-progress/#tying-entities-to-an-action-run).<br/>"},{"schema":{"type":"boolean"},"in":"query","name":"delete_blueprint","required":false,"description":"If `true`, this call will also delete the blueprint itself.<br/>"},{"schema":{"type":"string","minLength":1},"in":"path","name":"blueprint_identifier","required":true,"description":"The identifier of the blueprint whose entities you want to delete.<br/>"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Entities deleted successfully"},"403":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>missing_permissions</b></td>\n  <td>You do not have permissions to perform the requested operation. For further details, please contact your admin</td>\n</tr>\n<tr>\n  <td><b>has_dependents</b></td>\n  <td>The entity has dependent entities that must be deleted along with it. To do that, use \"delete_dependents=true\"</td>\n</tr>\n</table>\n"},"404":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>not_found</b></td>\n  <td>A blueprint with the provided `identifier` was not found</td>\n</tr>\n</table>\n"},"422":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>invalid_request</b></td>\n  <td>The provided data does not match the route schema</td>\n</tr>\n</table>\n"},"500":{"description":"One of the following errors occurred:\n\n<table>\n<tr>\n  <th>Error</th>\n  <th>Description</th>\n</tr>\n<tr>\n  <td><b>internal_error</b></td>\n  <td>An internal error occurred</td>\n</tr>\n</table>\n"}}}
+>
+  
+</StatusCodes>
+
+
+      

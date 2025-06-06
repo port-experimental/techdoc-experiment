@@ -1,0 +1,40 @@
+```json showLineNumbers
+{
+  "identifier": "sentryIssue",
+  "description": "This blueprint represents an issue trigger event from Sentry",
+  "title": "Sentry Issue Event",
+  "icon": "Sentry",
+  "schema": {
+    "properties": {
+      "level": {
+        "type": "string",
+        "title": "Level",
+        "enum": ["error", "info", "fatal", "warning", "debug", "sample"]
+      },
+      "platform": {
+        "type": "string",
+        "title": "Platform",
+        "description": "the platform name in Sentry"
+      },
+      "status": {
+        "type": "string",
+        "title": "Issue Status"
+      },
+      "projectID": {
+        "type": "string",
+        "title": "Project ID",
+        "description": "the ID of the project in Sentry"
+      },
+      "action": {
+        "type": "string",
+        "title": "Action",
+        "enum": ["created", "resolved", "assigned", "ignored"]
+      }
+    },
+    "required": []
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "relations": {}
+}
+```
