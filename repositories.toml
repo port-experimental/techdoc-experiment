@@ -1,0 +1,14 @@
+# Configuration for remote README ingestion
+# Add the names of the organizations, groups, or projects you want to scan.
+
+[github]
+# A list of GitHub organization names
+orgs = ["port-experimental"]
+
+[gitlab]
+# A list of GitLab group names (requires self-hosted GitLab URL to be set in .env)
+groups = ["my-group"]
+
+[azure_repos]
+# A list of Azure DevOps project names (requires Azure DevOps org URL to be set in .env)
+projects = ["my-project"] 
